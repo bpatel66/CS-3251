@@ -1,0 +1,34 @@
+-bash-4.1$ python ttweetcl.py -d 130.207.114.30 13000
+Attempting to connect to server
+Downloading message from Server: 130.207.114.30 with Port Number: 13000
+The message from the Server: EMPTY MESSAGE
+-bash-4.1$ python ttweetcl.py -u 130.207.114.30 13000 "You should select a port for your ttweet service. We recommend something between say 13000 and 14000. It is wise to provide the server port as input to the server and not to hard code the server port in the program. Note that if your server crashes, its port number may not be usable for a short period of time afterwards (for reasons we will explain later) so it is best to choose a new port number when you restart it."
+
+ERROR: The character limit for the message is 150
+-bash-4.1$ python ttweetcl.py -d 130.207.114.30 13000
+Attempting to connect to server
+Downloading message from Server: 130.207.114.30 with Port Number: 13000
+The message from the Server: EMPTY MESSAGE
+-bash-4.1$ python ttweetcl.py -u 130.207.114.30 13000 "Hello this is valid message1"
+Attempting to connect to server
+Sending message to Server: 130.207.114.30 with Port Number: 13000
+The Message that is currently on the server is: Upload was Successfull!!!
+-bash-4.1$ python ttweetcl.py -d 130.207.114.30 13000                               
+Attempting to connect to server
+Downloading message from Server: 130.207.114.30 with Port Number: 13000
+The message from the Server: Hello this is valid message1
+-bash-4.1$ python ttweetcl.py -u 130.207.114.30 13000 "Hello this is valid message2"
+Attempting to connect to server
+Sending message to Server: 130.207.114.30 with Port Number: 13000
+The Message that is currently on the server is: Upload was Successfull!!!
+-bash-4.1$ python ttweetcl.py -d 130.207.114.30 13000                               
+Attempting to connect to server
+Downloading message from Server: 130.207.114.30 with Port Number: 13000
+The message from the Server: Hello this is valid message2
+-bash-4.1$ python ttweetcl.py -u 130.207.114.30 13000 "You should select a port for your ttweet service. We recommend something between say 13000 and 14000. It is wise to provide the server port as input to the server and not to hard code the server port in the program. Note that if your server crashes, its port number may not be usable for a short period of time afterwards (for reasons we will explain later) so it is best to choose a new port number when you restart it.3"
+
+ERROR: The character limit for the message is 150
+-bash-4.1$ python ttweetcl.py -d 130.207.114.30 13000
+Attempting to connect to server
+Downloading message from Server: 130.207.114.30 with Port Number: 13000
+The message from the Server: Hello this is valid message2

@@ -1,0 +1,610 @@
+Authors:  
+- Balkrishna Patel (bpatel66)
+
+
+__________________________________________________________
+Test1: Startup
+- Initialize the Server
+- Initialize 1 Client
+
+Server Outputs:
+
+	Server: 130.207.114.27 is listening on Port: 8080
+	Nestor has entered the server
+
+Client Outputs: 
+
+	Attempting to connect to server
+
+	Validating Username for uniqueness on Server
+
+	username is unique!
+
+___________________________________________________________
+Test2: 5 Active users
+- Initialize 4 more Clients
+
+Server Outputs:
+
+	Server: 130.207.114.27 is listening on Port: 8080
+	Nestor has entered the server
+	Balkrishna has entered the server
+	Joe has entered the server
+	Philip has entered the server
+	Max has entered the server
+
+Client1 Outputs:
+
+	Attempting to connect to server
+
+	Validating Username for uniqueness on Server
+
+	username is unique!
+
+	Enter Command:
+
+Client2 Outputs:
+
+	Attempting to connect to server
+
+	Validating Username for uniqueness on Server
+
+	username is unique!
+
+	Enter Command:
+
+Client3 Outputs:
+	Attempting to connect to server
+
+	Validating Username for uniqueness on Server
+
+	username is unique!
+
+	Enter Command:
+
+Client4 Outputs:
+
+	Attempting to connect to server
+
+	Validating Username for uniqueness on Server
+
+	username is unique!
+
+	Enter Command:
+
+Client5 Outputs:
+
+	Attempting to connect to server
+
+	Validating Username for uniqueness on Server
+
+	username is unique!
+
+	Enter Command:
+
+__________________________________________________________
+Test3: Too many Users
+- Initialize 6th Client
+
+Server Outputs:
+
+	Server: 130.207.114.27 is listening on Port: 8080
+	Nestor has entered the server
+	Balkrishna has entered the server
+	Joe has entered the server
+	Philip has entered the server
+	Max has entered the server
+
+Client6 Outputs:
+
+	Attempting to connect to server
+
+	Validating Username for uniqueness on Server
+
+	ERROR: username is NOT unique, or the server is full, retry entering the server with a new username or try again later
+
+___________________________________________________________
+Test4: Duplicate User
+- Exit with one of the Clients
+- Initalize a new client with an already active user
+
+Server Outputs:
+
+	An exit request has been sent by: Philip
+	Philip has left the server
+
+Client1 Outputs:
+
+	(Same as Test2 output for this client)
+
+Client2 Outputs:
+
+	(Same as Test2 output for this client)
+
+Client3 Outputs:
+
+	(Same as Test2 output for this client)
+
+Client4 Outputs:
+
+	Attempting to connect to server
+
+	Validating Username for uniqueness on Server
+
+	ERROR: username is NOT unique, or the server is full, retry entering the server with a new username or try again later
+
+Client5 Outputs:
+
+	(Same as Test2 output for this client)
+
+__________________________________________________________
+Test5: Subscribe 
+- Initialize a new unique client
+- Have all the clients subscribe to #A
+- Have client1, client3, client5 subscribe to #ALL
+- Have client2, client4 subscribe to #B
+
+Server Outputs:
+
+	Philip has entered the server
+	A subscription request has been sent by: Nestor
+	Nestor has successfully subscribed to: A
+	A subscription request has been sent by: Balkrishna
+	Balkrishna has successfully subscribed to: A
+	A subscription request has been sent by: Joe
+	Joe has successfully subscribed to: A
+	A subscription request has been sent by: Philip
+	Philip has successfully subscribed to: A
+	A subscription request has been sent by: Max
+	Max has successfully subscribed to: A
+	A subscription request has been sent by: Nestor
+	Nestor has successfully subscribed to: ALL
+	A subscription request has been sent by: Joe
+	Joe has successfully subscribed to: ALL
+	A subscription request has been sent by: Max
+	Max has successfully subscribed to: ALL
+	A subscription request has been sent by: Balkrishna
+	Balkrishna has successfully subscribed to: B
+	A subscription request has been sent by: Philip
+	Philip has successfully subscribed to: B
+
+
+Client1 Outputs:
+
+	The subscription request was sent to the server
+	waiting for response from server for the subscription..
+	Received a response from the server
+	SUCCESS: Subscribed to the hashtag #A
+	You are currently subscribed to: 1 hashtags
+	Here are the hashtags you are currently subscribed to: ['A']
+	Enter Command: subscribe #ALL
+	The subscription request was sent to the server
+	waiting for response from server for the subscription..
+	Received a response from the server
+	SUCCESS: Subscribed to the hashtag #ALL
+	You are currently subscribed to: 2 hashtags
+	Here are the hashtags you are currently subscribed to: ['A', 'ALL']
+	Enter Command: 
+
+Client2 Outputs:
+
+	The subscription request was sent to the server
+	waiting for response from server for the subscription..
+	Received a response from the server
+	SUCCESS: Subscribed to the hashtag #A
+	You are currently subscribed to: 1 hashtags
+	Here are the hashtags you are currently subscribed to: ['A']
+	Enter Command: subscribe #B
+	The subscription request was sent to the server
+	waiting for response from server for the subscription..
+	Received a response from the server
+	SUCCESS: Subscribed to the hashtag #B
+	You are currently subscribed to: 2 hashtags
+	Here are the hashtags you are currently subscribed to: ['A', 'B']
+	Enter Command: 
+
+
+Client3 Outputs:
+
+	The subscription request was sent to the server
+	waiting for response from server for the subscription..
+	Received a response from the server
+	SUCCESS: Subscribed to the hashtag #A
+	You are currently subscribed to: 1 hashtags
+	Here are the hashtags you are currently subscribed to: ['A']
+	Enter Command: subscribe #ALL
+	The subscription request was sent to the server
+	waiting for response from server for the subscription..
+	Received a response from the server
+	SUCCESS: Subscribed to the hashtag #ALL
+	You are currently subscribed to: 2 hashtags
+	Here are the hashtags you are currently subscribed to: ['A', 'ALL']
+	Enter Command: 
+
+Client4 Outputs:
+
+	The subscription request was sent to the server
+	waiting for response from server for the subscription..
+	Received a response from the server
+	SUCCESS: Subscribed to the hashtag #A
+	You are currently subscribed to: 1 hashtags
+	Here are the hashtags you are currently subscribed to: ['A']
+	Enter Command: subscribe #B
+	The subscription request was sent to the server
+	waiting for response from server for the subscription..
+	Received a response from the server
+	SUCCESS: Subscribed to the hashtag #B
+	You are currently subscribed to: 2 hashtags
+	Here are the hashtags you are currently subscribed to: ['A', 'B']
+	Enter Command: 
+
+
+Client5 Outputs:
+
+	The subscription request was sent to the server
+	waiting for response from server for the subscription..
+	Received a response from the server
+	SUCCESS: Subscribed to the hashtag #A
+	You are currently subscribed to: 1 hashtags
+	Here are the hashtags you are currently subscribed to: ['A']
+	Enter Command: subscribe #ALL
+	The subscription request was sent to the server
+	waiting for response from server for the subscription..
+	Received a response from the server
+	SUCCESS: Subscribed to the hashtag #ALL
+	You are currently subscribed to: 2 hashtags
+	Here are the hashtags you are currently subscribed to: ['A', 'ALL']
+	Enter Command: 
+
+__________________________________________________________
+Test6: Tweet
+- Have client1 send out the following tweet:
+  - ""
+- Have client2 send out the following tweet:
+  - "Hello World" #A#ValidTweet
+- Have client3 send out the following tweet:
+  - "If you know the enemy and know yourself, you need not fear the result of a hundred battles. If you know yourself but not the enemy, for every victory      gained you will also suffer a defeat. If you know neither the enemy nor yourself, you will succumb in every battle." #A#TweetTooLong
+- Have client4 send out the following tweet:
+  - "This is a valid tweet" #A#ThisIsAnInvalidHashTag123WoopiesTooLong
+- Have client5 send out the following tweet:
+  - "This is a valid tweet" #A#B#C#D#E#F#G#H#CantHaveMoreThan8Hashtags
+- Have client1 send out the following tweet:
+  - "client2 and client4 should have 2 tweets" #A#B
+
+Server Outputs:
+
+	 Balkrishna has sent out a tweet
+	sending tweet to: Nestor
+	sending tweet to: Balkrishna
+	sending tweet to: Joe
+	sending tweet to: Philip
+	sending tweet to: Max
+
+
+Client1 Outputs:
+
+	Enter Command: tweet ""
+	Error: Command not recognized. Available Commands:
+	tweet "<150 char max tweet>" <Hashtag>
+	subscribe <Hashtag>
+	unsubscribe <Hashtag>
+	timeline
+	exit
+	Enter Command: tweet "client2 and client4 should have 2 tweets" #A#B
+	tweet: client2 and client4 should have 2 tweets with length 40
+	Tweet was sent to the server
+	Enter Command:
+
+Client2 Outputs:
+
+	tweet: Hello World with length 11
+	Tweet was sent to the server
+	Enter Command:
+
+
+Client3 Outputs:
+
+	ERROR: tweet is longer than 150 characters.
+	Enter Command:
+
+Client4 Outputs:
+
+	tweet: This is a valid tweet with length 21
+	ERROR: hashtag is longer than 25 characters. Must be between 1 and 25 characters long.
+	Error: invalid hashtags provided
+	Enter Command: 
+
+
+Client5 Outputs:
+
+	tweet: This is a valid tweet with length 21
+	ERROR: Hashtag count exceeds maximum of 8 units.
+	Error: invalid hashtags provided
+	Enter Command: 
+
+
+__________________________________________________________
+Test7: Timeline
+- Have all clients run the timeline command
+
+Server Outputs:
+
+Client1 Outputs:
+
+	Timeline: 
+	Nestor {'message': 'Hello World', 'command': 'tweet', 'user': 'Balkrishna', 'tags': ['A', 'ValidTweet']}
+	Nestor {'message': 'client2 and client4 should have 2 tweets', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+
+Client2 Outputs:
+
+	Timeline: 
+	Balkrishna {'message': 'Hello World', 'command': 'tweet', 'user': 'Balkrishna', 'tags': ['A', 'ValidTweet']}
+	Balkrishna {'message': 'client2 and client4 should have 2 tweets', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Balkrishna {'message': 'client2 and client4 should have 2 tweets', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+
+Client3 Outputs:
+
+	Timeline: 
+	Joe {'message': 'Hello World', 'command': 'tweet', 'user': 'Balkrishna', 'tags': ['A', 'ValidTweet']}
+	Joe {'message': 'client2 and client4 should have 2 tweets', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+
+Client4 Outputs:
+
+	Philip {'message': 'Hello World', 'command': 'tweet', 'user': 'Balkrishna', 'tags': ['A', 'ValidTweet']}
+	Philip {'message': 'client2 and client4 should have 2 tweets', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Philip {'message': 'client2 and client4 should have 2 tweets', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+
+Client5 Outputs:
+
+	Timeline: 
+	Max {'message': 'Hello World', 'command': 'tweet', 'user': 'Balkrishna', 'tags': ['A', 'ValidTweet']}
+	Max {'message': 'client2 and client4 should have 2 tweets', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+
+
+__________________________________________________________
+Test8: TimeLine2
+- Have all clients run the timeline command
+
+Server Outputs:
+
+Client1 Outputs:
+
+	No tweets in timeline.
+
+Client2 Outputs:
+
+	No tweets in timeline.
+
+Client3 Outputs:
+
+	No tweets in timeline.
+
+Client4 Outputs:
+
+	No tweets in timeline.
+
+Client5 Outputs:
+
+	No tweets in timeline.
+
+__________________________________________________________
+Test9: Unsubscribe
+- Have client1 send out the following tweet:
+  - "Start of a new timeline" #A#B
+- Have client2 and client3 unsubscribe from #B
+- Have all the clients run the timeline command
+- Have client1 send out the following tweet:
+  - "Start of a new timeline2" #A#B
+- Have client1, client3, client5 unsubscribe from #ALL
+- Have client1 send out the following tweet:
+  - "Start of a new timeline3" #A#B
+- Have all the clients run the timeline command
+
+Server Outputs:
+
+ 	Nestor has sent out a tweet
+	sending tweet to: Nestor
+	sending tweet to: Balkrishna
+	sending tweet to: Balkrishna
+	sending tweet to: Joe
+	sending tweet to: Philip
+	sending tweet to: Philip
+	sending tweet to: Max
+
+	Nestor has sent out a tweet
+	sending tweet to: Nestor
+	sending tweet to: Balkrishna
+	sending tweet to: Balkrishna
+	sending tweet to: Joe
+	sending tweet to: Philip
+	sending tweet to: Philip
+	sending tweet to: Max
+
+	Unsubscribe request recieved from: Balkrishna
+	Balkrishna has successfully unsubscribed from: B
+	Unsubscribe request recieved from: Joe
+	Joe was not unsubscribed from: B because that subscription does not exist
+
+	 Nestor has sent out a tweet
+	sending tweet to: Nestor
+	sending tweet to: Balkrishna
+	sending tweet to: Joe
+	sending tweet to: Philip
+	sending tweet to: Philip
+	sending tweet to: Max
+	Unsubscribe request recieved from: Nestor
+	Nestor has successfully unsubscribed from: ALL
+
+	Unsubscribe request recieved from: Joe
+	Joe has successfully unsubscribed from: ALL
+	Unsubscribe request recieved from: Max
+	Max has successfully unsubscribed from: ALL
+
+	Nestor has sent out a tweet
+	sending tweet to: Nestor
+	sending tweet to: Balkrishna
+	sending tweet to: Joe
+	sending tweet to: Philip
+	sending tweet to: Philip
+	sending tweet to: Max
+
+
+
+Client1 Outputs:
+
+	tweet: Start of a new timeline with length 23
+	Tweet was sent to the server
+	Timeline: 
+	Nestor {'message': 'Start of a new timeline', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Enter Command: tweet "Start of a new timeline2" #A#B
+	tweet: Start of a new timeline2 with length 24
+	Tweet was sent to the server
+	Enter Command: unsubscribe #ALL
+	Unsubscribe request sent to the server
+	Waiting for response from server for the unsubscription..
+	Received a response from the server for the unsubscribe request
+	SUCESS: Unsubscribed to the hashtag #ALL
+	You are now subscribed to: 1 hashtags
+	Here are the hashtags you are subscribed to: ['A']
+	tweet: Start of a new timeline3 with length 24
+	Tweet was sent to the server
+	Enter Command: timeline
+	Timeline: 
+	Nestor {'message': 'Start of a new timeline2', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Nestor {'message': 'Start of a new timeline3', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+
+
+Client2 Outputs:
+
+	Unsubscribe request sent to the server
+	Waiting for response from server for the unsubscription..
+	Received a response from the server for the unsubscribe request
+	SUCESS: Unsubscribed to the hashtag #B
+	You are now subscribed to: 1 hashtags
+	Here are the hashtags you are subscribed to: ['A']
+	Timeline: 
+	Balkrishna {'message': 'Start of a new timeline', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Enter Command: timeline 
+	Timeline: 
+	Balkrishna {'message': 'Start of a new timeline2', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Balkrishna {'message': 'Start of a new timeline3', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+
+
+
+Client3 Outputs:
+
+	Unsubscribe request sent to the server
+	Waiting for response from server for the unsubscription..
+	Received a response from the server for the unsubscribe request
+	ERROR: No active subscription exists for the hashtag #B
+	You are now subscribed to: 2 hashtags
+	Here are the hashtags you are subscribed to: ['A', 'ALL']
+	Timeline: 
+	Joe {'message': 'Start of a new timeline', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Enter Command: unsubscribe #ALL
+	Unsubscribe request sent to the server
+	Waiting for response from server for the unsubscription..
+	Received a response from the server for the unsubscribe request
+	SUCESS: Unsubscribed to the hashtag #ALL
+	You are now subscribed to: 1 hashtags
+	Here are the hashtags you are subscribed to: ['A']
+	Enter Command: timeline
+	Timeline: 
+	Joe {'message': 'Start of a new timeline2', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Joe {'message': 'Start of a new timeline3', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+
+
+
+Client4 Outputs:
+
+	Philip {'message': 'Start of a new timeline', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Philip {'message': 'Start of a new timeline', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Enter Command: timeline
+	Philip {'message': 'Start of a new timeline2', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Philip {'message': 'Start of a new timeline2', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Philip {'message': 'Start of a new timeline3', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Philip {'message': 'Start of a new timeline3', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+
+Client5 Outputs:
+
+	Timeline: 
+	Max {'message': 'Start of a new timeline', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Enter Command: unsubscribe #ALL
+	Unsubscribe request sent to the server
+	Waiting for response from server for the unsubscription..
+	Received a response from the server for the unsubscribe request
+	SUCESS: Unsubscribed to the hashtag #ALL
+	You are now subscribed to: 1 hashtags
+	Here are the hashtags you are subscribed to: ['A']
+	Enter Command: timeline
+	Max {'message': 'Start of a new timeline2', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+	Max {'message': 'Start of a new timeline3', 'command': 'tweet', 'user': 'Nestor', 'tags': ['A', 'B']}
+
+
+__________________________________________________________
+
+Test10:
+- Have all clients exit the server
+
+Server Outputs:
+
+	An exit request has been sent by: Nestor
+	Nestor has left the server
+	An exit request has been sent by: Balkrishna
+	Balkrishna has left the server
+	An exit request has been sent by: Joe
+	Joe has left the server
+	An exit request has been sent by: Philip
+	Philip has left the server
+	An exit request has been sent by: Max
+	Max has left the server
+
+Client1 Outputs:
+
+	Good bye...
+
+Client2 Outputs:
+
+	Good bye...
+
+Client3 Outputs:
+
+	Good bye...
+
+Client4 Outputs:
+
+	Good bye...
+
+Client5 Outputs:
+
+	Good bye...
+
+__________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

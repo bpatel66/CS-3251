@@ -1,0 +1,203 @@
+Authors:  
+- Balkrishna Patel (bpatel66)
+- 
+
+__________________________________________________________
+Test1: Startup
+- Initialize the Server
+- Initialize 1 Client
+
+Server Outputs:
+
+Client Outputs
+
+___________________________________________________________
+Test2: 5 Active users
+- Initialize 4 more Clients
+
+Server Outputs:
+
+Client1 Outputs:
+
+Client2 Outputs:
+
+Client3 Outputs:
+
+Client4 Outputs:
+
+Client5 Outputs:
+
+__________________________________________________________
+Test3: Too many Users
+- Initialize 6th Client
+
+Server Outputs:
+
+Client6 Outputs:
+
+___________________________________________________________
+Test4: Duplicate User
+- Exit with one of the Clients
+- Initalize a new client with an already active user
+
+Server Outputs:
+
+Client1 Outputs:
+
+Client2 Outputs:
+
+Client3 Outputs:
+
+Client4 Outputs:
+
+Client5 Outputs:
+
+__________________________________________________________
+Test5: Subscribe 
+- Initialize a new unique client
+- Have all the clients subscribe to #A
+- Have client1, client3, client5 subscribe to #ALL
+- Have client2, client4 subscribe to #B
+
+Server Outputs:
+
+Client1 Outputs:
+
+Client2 Outputs:
+
+Client3 Outputs:
+
+Client4 Outputs:
+
+Client5 Outputs:
+
+__________________________________________________________
+Test6: Tweet
+- Have client1 send out the following tweet:
+  - ""
+- Have client2 send out the following tweet:
+  - "Hello World" #A#ValidTweet
+- Have client3 send out the following tweet:
+  - "If you know the enemy and know yourself, you need not fear the result of a hundred battles. If you know yourself but not the enemy, for every victory      gained you will also suffer a defeat. If you know neither the enemy nor yourself, you will succumb in every battle." #A#TweetTooLong
+- Have client4 send out the following tweet:
+  - "This is a valid tweet" #A#ThisIsAnInvalidHashTag123WoopiesTooLong
+- Have client5 send out the following tweet:
+  - "This is a valid tweet" #A#B#C#D#E#F#G#H#CantHaveMoreThan8Hashtags
+- Have client1 send out the following tweet:
+  - "client2 and client4 should have 2 tweets" #A#B
+
+Server Outputs:
+
+Client1 Outputs:
+
+Client2 Outputs:
+
+Client3 Outputs:
+
+Client4 Outputs:
+
+Client5 Outputs:
+
+__________________________________________________________
+Test7: TimeLine
+- Have all clients run the timeline command
+
+Server Outputs:
+
+Client1 Outputs:
+
+Client2 Outputs:
+
+Client3 Outputs:
+
+Client4 Outputs:
+
+Client5 Outputs:
+
+__________________________________________________________
+Test8: Timeline2
+- Have all clients run the timeline command
+
+Server Outputs:
+
+Client1 Outputs:
+
+Client2 Outputs:
+
+Client3 Outputs:
+
+Client4 Outputs:
+
+Client5 Outputs:
+
+__________________________________________________________
+Test9: Unsubscribe
+- Have client1 send out the following tweet:
+  - "Start of a new timeline" #A#B
+- Have client2 and client3 unsubscribe from #B
+- Have all the clients run the timeline command
+- Have client1 send out the following tweet:
+  - "Start of a new timeline2" #A#B
+- Have client1, client3, client5 unsubscribe from #ALL
+- Have client1 send out the following tweet:
+  - "Start of a new timeline3" #A#B
+- Have all the clients run the timeline command
+
+Server Outputs:
+
+Client1 Outputs:
+
+Client2 Outputs:
+
+Client3 Outputs:
+
+Client4 Outputs:
+
+Client5 Outputs:
+
+__________________________________________________________
+
+Test10:
+- Have all clients exit the server
+
+Server Outputs:
+
+Client1 Outputs:
+
+Client2 Outputs:
+
+Client3 Outputs:
+
+Client4 Outputs:
+
+Client5 Outputs:
+
+__________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
